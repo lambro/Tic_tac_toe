@@ -11,26 +11,18 @@
     </div>
   <% end %>
 
+<p>Who would you like to play against?</p>
   <div class="field">
-    <%= f.label :player1_id %><br />
-    <%= f.number_field :player1_id %>
+    <%= f.label :users_online %><br />
+    <%= f.collection_select :player2_id, User.without_user(current_user.id), :id, :name %>
   </div>
+
+<p>Play against the computer?</p>
   <div class="field">
-    <%= f.label :player2_id %><br />
-    <%= f.number_field :player2_id %>
-  </div>
-  <div class="field">
-    <%= f.label :winner %><br />
-    <%= f.number_field :winner %>
-  </div>
-  <div class="field">
-    <%= f.label :loser %><br />
-    <%= f.number_field :loser %>
-  </div>
-  <div class="field">
-    <%= f.label :draw %><br />
+    <%= f.label :against_the_computer %><br />
     <%= f.check_box :draw %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
