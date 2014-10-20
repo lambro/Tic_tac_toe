@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :bio, :draws, :email, :losses, :name, :password_digest, :profile_picture, :wins, :password_confirmation
+  attr_accessible :bio, :draws, :email, :losses, :name, :password_digest, :profile_picture, :wins, :password_confirmation, :password
 
     has_secure_password
     has_many :moves

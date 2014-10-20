@@ -1,7 +1,13 @@
 TicTacToe::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  
   resources :games
-
-
+  resources :sessions
   resources :users
 
 
@@ -54,7 +60,7 @@ TicTacToe::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'users#index'
+  root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 
