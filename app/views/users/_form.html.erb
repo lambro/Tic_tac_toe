@@ -12,37 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %>*<br />
+    <%= f.text_field :name, placeholder: "Your name" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :email %>*<br />
+    <%= f.text_field :email, placeholder: "E-mail address" %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br />
-    <%= f.text_field :password_digest %>
+    <%= f.label :password %>*<br />
+    <%= f.password_field :password_digest, placeholder: "A-Z/0-9 characters please" %>
   </div>
   <div class="field">
+    <%= f.label :Confirm_password %>*<br />
+    <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %>
+  </div>
+
+<h2>About You...</h2>
+
+  <div class="field about">
     <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
+    <%= f.text_area :bio, placeholder: "A little about you.." %>
   </div>
-  <div class="field">
-    <%= f.label :wins %><br />
-    <%= f.number_field :wins %>
-  </div>
-  <div class="field">
-    <%= f.label :losses %><br />
-    <%= f.number_field :losses %>
-  </div>
-  <div class="field">
-    <%= f.label :draws %><br />
-    <%= f.number_field :draws %>
-  </div>
-  <div class="field">
+  
+  <div class="field about">
     <%= f.label :profile_picture %><br />
-    <%= f.text_area :profile_picture %>
+    <%= f.text_field :profile_picture %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

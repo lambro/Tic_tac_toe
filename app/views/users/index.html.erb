@@ -1,18 +1,10 @@
-<h1>Listing users</h1>
+<h1>Log in</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Password digest</th>
-    <th>Bio</th>
-    <th>Wins</th>
-    <th>Losses</th>
-    <th>Draws</th>
-    <th>Profile picture</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @users.each do |user| %>
@@ -20,11 +12,6 @@
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= user.password_digest %></td>
-    <td><%= user.bio %></td>
-    <td><%= user.wins %></td>
-    <td><%= user.losses %></td>
-    <td><%= user.draws %></td>
-    <td><%= user.profile_picture %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
