@@ -26,24 +26,32 @@ class MovesController < ApplicationController
 
   def new
 
+
+
     @move = Move.create square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:current_user.id
+    
     @game = Game.find params[:game_id]
+
+    @move.move =
+      if @game.player1_id == @move.player_id
+            "X"
+            else
+            "O"
+          end
+
+    binding.pry
+
     redirect_to @game
 
-    def player_square_id(player_id)
-      if @game.player1_id == player_id then 
 
-      
     end
-
-
-
 
     # respond_to do |format|
     #   format.html # new.html.erb
     #   format.json { render json: @move }
     # end
-  end
+
+
 
   # GET /moves/1/edit
   def edit
