@@ -26,23 +26,20 @@ class MovesController < ApplicationController
 
   def new
 
-
-
-    @move = Move.create square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:current_user.id
-    
     @game = Game.find params[:game_id]
+    player_sym = if @game.player1_id == current_user.id
+      "X"
+    else
+      "O"
+    end
 
-    @move.move =
-      if @game.player1_id == @move.player_id
-            "X"
-            else
-            "O"
-          end
+    @move = Move.create! square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:current_user.id, move: player_sym
 
-    binding.pry
-
-    redirect_to @game
-
+    respond_to do |format|
+      if @move.save
+        format.html { redirect_to @game, notice: "#{@current_user.name} has moved!" }
+      end
+    end
 
     end
 
@@ -50,8 +47,6 @@ class MovesController < ApplicationController
     #   format.html # new.html.erb
     #   format.json { render json: @move }
     # end
-
-
 
   # GET /moves/1/edit
   def edit
@@ -65,15 +60,7 @@ class MovesController < ApplicationController
 
 
 
-    respond_to do |format|
-      if @move.save
-        format.html { redirect_to @move, notice: 'Move was successfully created.' }
-        format.json { render json: @move, status: :created, location: @move }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @move.errors, status: :unprocessable_entity }
-      end
-    end
+    
   end
 
   # PUT /moves/1
