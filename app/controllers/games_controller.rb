@@ -15,6 +15,8 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
+    @board = @game.build_board
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @game }
