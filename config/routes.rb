@@ -6,7 +6,9 @@ TicTacToe::Application.routes.draw do
   get "sessions/destroy"
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
-  resources :games
+  resources :games do
+    resources :moves
+  end
   resources :sessions
   resources :users
 
