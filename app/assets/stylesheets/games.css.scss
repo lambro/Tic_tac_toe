@@ -3,14 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .game_wrap{
-  width:70%;
+  width:65%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.2rem;
 }
 
+/*
 .square{
   width:25%;
   height:33px;
   float:left;
   background-color: red;
   margin:2px;
+}*/
+
+.fa{  
+  margin:0;
+  float:right;
+  padding:2px;
+  vertical-align: center;
+ display: inline-block;
+ border-bottom:solid 3px black;
+ padding-right: 7px;
+ padding-left: 7px;
 }
 
+#sq2, #sq5, #sq8 {
+  border-right: solid 3px black;
+  border-left: solid 3px black;
+}

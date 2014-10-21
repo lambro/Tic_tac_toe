@@ -41,7 +41,8 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-    binding.pry
+
+    @game.player1_id = current_user.id
 
     respond_to do |format|
       if @game.save
@@ -69,6 +70,14 @@ class GamesController < ApplicationController
       end
     end
   end
+
+  # def move
+
+  #   @game = Game.find(params[:id])
+
+    
+    
+  # end
 
   # DELETE /games/1
   # DELETE /games/1.json

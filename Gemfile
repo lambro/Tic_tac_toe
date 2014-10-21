@@ -7,7 +7,14 @@ gem 'rails', '3.2.19'
 
 gem 'pg'
 gem 'bcrypt-ruby'
-gem 'pry-rails'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
 
 
 # Gems used only for assets and not required

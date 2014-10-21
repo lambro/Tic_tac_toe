@@ -2,12 +2,12 @@
 
 <p>
   <b>Player1:</b>
-  <%= current_user.name %>
+  <%= @current_user.name %>
 </p>
 
 <p>
   <b>Player2:</b>
-  <%= @game.player2_id %>
+  <%= @game.player2.name %>
 </p>
 
 <p>
@@ -20,13 +20,9 @@
   <%= @game.loser %>
 </p>
 
-<p>
-  <b>Draw:</b>
-  <%= @game.draw %>
-</p>
+<!-- <div class="game_wrap" id="game_wrap">
 
-<div class="game_wrap" id="game_wrap">
-<div class="square" id="sq1"><%= link_to "X", games_path, method: :update%></div>
+<%#= link_to (games_path), method: :update do %><i class="fa fa-square-o square" id="sq1"></i><%#end%>
 <div class="square" id="sq2"> </div>
 <div class="square" id="sq3"> </div>
 <div class="square" id="sq4"> </div>
@@ -35,7 +31,20 @@
 <div class="square" id="sq7"> </div>
 <div class="square" id="sq8"> </div>
 <div class="square" id="sq9"> </div>
+</div> -->
+
+<div class="game_wrap" id="game_wrap">
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq1"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq2"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq3"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq4"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq5"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq6"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq7"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq8"></i><%end%>
+<%= link_to (games_path), method: :update do %><i class="fa fa-square-o square fa-5x" id="sq9"></i><%end%>
 </div>
+
 
 
 

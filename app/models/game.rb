@@ -5,4 +5,14 @@ class Game < ActiveRecord::Base
   belongs_to :player2, class_name: 'User'
   has_many :moves
 
+  # before_save :player1_id
+
+  # def player1_id
+
+  #   if @current_user
+  #     self.player1_id = @current_user.id
+  #   end 
+    
+  # end
+
 end

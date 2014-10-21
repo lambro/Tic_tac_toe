@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <% hidden_field_tag :player1_id, value: 'current_user.id' %>
+  </div>
+
 <p>Who would you like to play against?</p>
   <div class="field">
     <%= f.label :users_online %><br />

@@ -15,6 +15,7 @@ u2 = User.create!(name: "Ben", bio: "Some stuff for a bio", email: "ben@email.co
 u3 = User.create!(name: "Ian", bio: "Some stuff for a bio", email: "ian@email.com", password: "something", password_confirmation: "something" )
 u4 = User.create!(name: "Nina", bio: "Some stuff for a bio", email: "nina@email.com", password: "something", password_confirmation: "something" )
 u5 = User.create!(name: "Laura", bio: "Some stuff for a bio", email: "laura@email.com", password: "something", password_confirmation: "something" )
+u6 = User.create!(name: "Olly", bio: "Some stuff for a bio", email: "Olly@email.com", password: "something", password_confirmation: "something" )
 
 g1 = Game.create!(player1_id: u1.id, player2_id: u2.id, winner: u1.id, loser: u2.id, draw: false)
 g2 = Game.create!(player1_id: u2.id, player2_id: u3.id, winner: u2.id, loser: u3.id, draw: false)
