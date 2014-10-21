@@ -1,3 +1,16 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.game_wrap{
+  width:70%;
+}
+
+.square{
+  width:25%;
+  height:33px;
+  float:left;
+  background-color: red;
+  margin:2px;
+}
+
