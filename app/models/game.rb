@@ -8,9 +8,13 @@ class Game < ActiveRecord::Base
 def build_board
 
   board = [nil, nil, nil, nil, nil, nil, nil, nil, nil]
-  
-  binding.pry
-  puts "debug"
+
+    self.moves.each do |move| 
+      board[move.square_id] = move.move
+    end  
+
+  board
+
 end
 
 end
