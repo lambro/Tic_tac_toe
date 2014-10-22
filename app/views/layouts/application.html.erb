@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
+
+<header>
+  <nav>
+    <%= link_to 'log me out!', logout_path %>
+    <%= link_to 'Home', root_path %>
+  </nav>
+    <% if current_user %>
+    <p>hello <%= current_user.email %></p>
+    <% end %>
+
+    <div>
+      <p>Tic Tac Trillll</p>
+    </div>
+</header>
+
 <body>
 
   <% flash.each do |name, msg| %>
@@ -15,17 +30,29 @@
   </div>
   <% end %>
 
-  <% if current_user %>
-  <p>hello <%= current_user.email %></p>
-  <% end %>
-
-  
-
   <%= yield %>
 
-  <p>
-    <%= link_to 'log me out!', logout_path %>
-  </p>
-
 </body>
+
+<footer>
+    <%= link_to("https://gist.github.com/geraudmathe/129faf7e7aa6bfc28425") do %>
+      <span class="fa-stack fa-1x fa-lg">
+       <i class="fa fa-square-o fa-stack-2x"></i>
+       <i class="fa fa-twitter fa-stack-1x"></i>
+      </span>
+    <%end%>
+    <%= link_to("https://github.com/lambro") do %>
+      <span class="fa-stack fa-1x fa-lg">
+       <i class="fa fa-square-o fa-stack-2x"></i>
+       <i class="fa fa-github-alt fa-stack-1x"></i>
+      </span>
+    <%end%>
+    <%= link_to("https://www.facebook.com/gnrlassembly") do %>
+      <span class="fa-stack fa-1x fa-lg">
+       <i class="fa fa-square-o fa-stack-2x"></i>
+       <i class="fa fa-facebook fa-stack-1x"></i>
+      </span>
+    <%end%>
+</footer>
+
 </html>

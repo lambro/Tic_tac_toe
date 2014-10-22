@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
 
     scope :without_user, lambda { |user_id| where('users.id != ?', user_id )}
 
+    # Games.all.each do |game|
+    #   Game.where(winner == @user.id)
+    # # @wins = Game.where(winner: :id).count
+
 end
