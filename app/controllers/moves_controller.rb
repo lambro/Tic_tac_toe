@@ -27,6 +27,7 @@ class MovesController < ApplicationController
   def new
 
     @game = Game.find params[:game_id]
+    
     player_sym = if @game.player1_id == current_user.id
       "X"
     else

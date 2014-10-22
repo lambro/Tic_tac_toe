@@ -22,32 +22,32 @@
 
 <div class="game_wrap" id="game_wrap">
 
-<%= @board.each do |display| %>
+<% @board.each_with_index do |square_id, display| %>
 
-  <%if display == "X" %>
-    <span class="fa-stack fa-lg fa">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-close fa-stack-1x"></i>
-    </span>
+<%if square_id == "X" %>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-close fa-stack-1x"></i>
+</span>
 
-  <% elsif display == "O" %>
+<% elsif square_id == "O" %>
 
-    <span class="fa-stack fa-lg fa">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-circle-o fa-stack-1x"></i>
-    </span>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-circle-o fa-stack-1x"></i>
+</span>
 
-  <% elsif display == nil %>
+<% elsif square_id == nil %>
+<%= link_to(new_game_move_path(@game, square_id: display)) do %><i class="fa fa-square-o square fa-5x"></i><%end%>
 
-  <%= link_to(new_game_move_path(@game, square_id: 0)) do %>
-    <i class="fa fa-square-o square fa-5x" id="sq1"></i>
-    <%end%>
-    
-  <% end %>
-
+<% end %>
 <% end %>
 
 </div>
+
+
+
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
