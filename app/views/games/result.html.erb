@@ -1,2 +1,21 @@
 
-<%= @game.result %>
+<h1>Something</h1>
+
+<%= @game.result do |x| %>
+
+<% if x.result == "1" %>
+
+<h1>Player 1 Wins</h1>
+
+<% elsif x.result == "2" %>
+
+<h2>Player 2 Wins</h2>
+
+<% else x.result == "0" %>
+
+<h2>It is a DRAW</h2>
+
+<% end %>
+<% end %>
+
+<br><%= link_to 'Games', games_path %>

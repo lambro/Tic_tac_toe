@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .game_wrap{
-  width:60%;
+  width:500px;
   margin-left: auto;
   margin-right: auto;
   font-size: 2.2rem;
@@ -32,4 +32,8 @@
 a{
   text-decoration: none;
   color:black;
+}
+
+.fa-asterisk{
+  color: white;
 }

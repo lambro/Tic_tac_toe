@@ -12,7 +12,7 @@
 
 <p>
   <b>Winner:</b>
-  <%= @game.winner %>
+  <%= @game.winner_name %>
 </p>
 
 <p>
@@ -38,13 +38,16 @@
 
   <% elsif square_id == nil %>
       <%= link_to(new_game_move_path(@game, square_id: display)) do %>
-      <i class="fa fa-square-o square fa-4x"></i>
+      <span class="fa-stack fa-2x fa-lg">
+       <i class="fa fa-square-o fa-stack-2x"></i>
+       <i class="fa fa-asterisk fa-stack-1x"></i>
+      </span>
     <%end%>
   <% end %>
 <% end %>
 </div>
 
-<%= @game.result %>
+<%= @result %>
 
 
 

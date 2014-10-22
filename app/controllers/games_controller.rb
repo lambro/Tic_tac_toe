@@ -18,16 +18,15 @@ class GamesController < ApplicationController
     @board = @game.build_board
 
     @result = @game.result
-
-    if @result == true
-      redirect_to result_game_path
-    else
+    puts "@result is #{@result}"
+    if @result == 1
+      render :result, notice: "Player 1 wins" and return
+    elsif @result == 2
+      render :result,  notice: "Player 2 wins" and return
+    elsif @result == 3
+      render :result,  notice: "It's a draw" and return
     end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @game }
-    end
   end
 
   # GET /games/new

@@ -19,20 +19,27 @@ class Game < ActiveRecord::Base
   def result
     # the set and superset logic should be here
     @winning_combo = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]].to_set
+
     @playsx = self.moves.where(move: "X").pluck(:square_id).to_set
+
     @playso = self.moves.where(move: "O").pluck(:square_id).to_set
 
     if @winning_combo.any? { |subset| @playsx.superset? subset.to_set} == true
+      self.winner = player1_id
+      self.loser = player2_id
+      
       @result = 1
+
     elsif @winning_combo.any? { |subset| @playso.superset? subset.to_set} == true
       @result = 2
-    elsif @playsx.count > 5 || @playso.count > 5
-      @result = 3
+
+    elsif (@playsx.count + @playso.count) >= 9
+      @result = 0
+
     else
-      binding.pry
       self.build_board
     end
-
+    self.save
   end
 
 end
