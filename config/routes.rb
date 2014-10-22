@@ -8,6 +8,9 @@ TicTacToe::Application.routes.draw do
   
   resources :games do
     resources :moves
+    member do 
+      get :result
+    end
   end
   resources :sessions
   resources :users

@@ -24,30 +24,27 @@
 
 <% @board.each_with_index do |square_id, display| %>
 
-<%if square_id == "X" %>
-<span class="fa-stack fa-2x fa-lg">
-  <i class="fa fa-square-o fa-stack-2x"></i>
-  <i class="fa fa-close fa-stack-1x"></i>
-</span>
+  <%if square_id == "X" %>
+      <span class="fa-stack fa-2x fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-close fa-stack-1x"></i>
+      </span>
 
-<% elsif square_id == "O" %>
+  <% elsif square_id == "O" %>
+      <span class="fa-stack fa-2x fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-circle-o fa-stack-1x"></i>
+      </span>
 
-<span class="fa-stack fa-2x fa-lg">
-  <i class="fa fa-square-o fa-stack-2x"></i>
-  <i class="fa fa-circle-o fa-stack-1x"></i>
-</span>
-
-<% elsif square_id == nil %>
-<%= link_to(new_game_move_path(@game, square_id: display)) do %>
-<i class="fa fa-square-o square fa-4x"></i>
-<%end%>
-
+  <% elsif square_id == nil %>
+      <%= link_to(new_game_move_path(@game, square_id: display)) do %>
+      <i class="fa fa-square-o square fa-4x"></i>
+    <%end%>
+  <% end %>
 <% end %>
-<% end %>
-
 </div>
 
-
+<%= @game.result %>
 
 
 

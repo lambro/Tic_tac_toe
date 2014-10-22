@@ -17,6 +17,13 @@ class GamesController < ApplicationController
 
     @board = @game.build_board
 
+    @result = @game.result
+
+    if @result == true
+      redirect_to result_game_path
+    else
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @game }

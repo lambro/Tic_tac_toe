@@ -6,16 +6,33 @@ class Game < ActiveRecord::Base
   has_many :moves
 
 
-def build_board
+  def build_board
 
-  board = [nil, nil, nil, nil, nil, nil, nil, nil, nil]
+    board = [nil, nil, nil, nil, nil, nil, nil, nil, nil]
 
-    self.moves.each do |move| 
-      board[move.square_id] = move.move
-    end  
+      self.moves.each do |move| 
+        board[move.square_id] = move.move
+      end  
+      board
+  end
 
-  board
+  def result
+    # the set and superset logic should be here
+    @winning_combo = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]].to_set
+    @playsx = self.moves.where(move: "X").pluck(:square_id).to_set
+    @playso = self.moves.where(move: "O").pluck(:square_id).to_set
 
-end
+    if @winning_combo.any? { |subset| @playsx.superset? subset.to_set} == true
+      @result = 1
+    elsif @winning_combo.any? { |subset| @playso.superset? subset.to_set} == true
+      @result = 2
+    elsif @playsx.count > 5 || @playso.count > 5
+      @result = 3
+    else
+      binding.pry
+      self.build_board
+    end
+
+  end
 
 end
