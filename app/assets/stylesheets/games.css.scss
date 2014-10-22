@@ -3,35 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .game_wrap{
-  width:50%;
+  width:60%;
   margin-left: auto;
   margin-right: auto;
   font-size: 2.2rem;
+  overflow: hidden;
+  height: 500px;
 }
-
-/*
-.square{
-  width:25%;
-  height:33px;
-  float:left;
-  background-color: red;
-  margin:2px;
-}*/
 
 .fa{  
   margin:0;
-  float:left;
-  padding:2px;
-  vertical-align: center;
+  padding:  2px;
   display: inline-block;
   padding-right: 10px;
   padding-left: 10px;
+  color:black;
 }
 
 .fa:hover{
   color:red;
+  background-color: none;
 }
 
 .fa:visited{
   color:green;
+}
+
+a{
+  text-decoration: none;
+  color:black;
 }

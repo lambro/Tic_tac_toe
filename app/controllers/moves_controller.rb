@@ -27,7 +27,7 @@ class MovesController < ApplicationController
   def new
 
     @game = Game.find params[:game_id]
-    
+
     player_sym = if @game.player1_id == current_user.id
       "X"
     else
@@ -40,6 +40,7 @@ class MovesController < ApplicationController
       if @move.save
         format.html { redirect_to @game, notice: "#{@current_user.name} has moved!" }
       end
+
     end
 
     end
