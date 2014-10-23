@@ -19,13 +19,18 @@ class GamesController < ApplicationController
 
     @result = @game.result
     puts "@result is #{@result}"
+ 
     if @result == 1
-      render :result, notice: "Player 1 wins" and return
+      render action: 'result', notice: "Player 1 wins" and return
     elsif @result == 2
       render :result,  notice: "Player 2 wins" and return
     elsif @result == 3
       render :result,  notice: "It's a draw" and return
     end
+
+  #   if @game.player2_id == 1
+
+  #   end
 
   end
 

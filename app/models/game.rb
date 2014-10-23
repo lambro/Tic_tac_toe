@@ -29,18 +29,27 @@ class Game < ActiveRecord::Base
     if @winning_combo.any? { |subset| @playsx.superset? subset.to_set} == true
       self.winner = player1_id
       self.loser = player2_id
+      self.draw = false
       
       @result = 1
 
     elsif @winning_combo.any? { |subset| @playso.superset? subset.to_set} == true
       @result = 2
 
+      self.winner = player2_id
+      self.loser = player1_id
+      self.draw = false
+
     elsif (@playsx.count + @playso.count) >= 9
       @result = 0
+
+      self.draw = true
+
     else
-      self.build_board
+      # self.build_board
     end
     self.save
+    @result
   end
 
 end

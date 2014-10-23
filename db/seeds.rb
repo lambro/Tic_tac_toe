@@ -10,7 +10,7 @@ User.destroy_all
 Game.destroy_all
 Move.destroy_all
 
-u1 = User.create!(name: "Sarah", bio: "Some stuff for a bio", email: "sarah@email.com", password: "something", password_confirmation: "something" )
+u1 = User.create!(name: "computer", bio: "Some stuff for a bio", email: "computer@email.com", password: "something", password_confirmation: "something" )
 u2 = User.create!(name: "Ben", bio: "Some stuff for a bio", email: "ben@email.com", password: "something", password_confirmation: "something" )
 u3 = User.create!(name: "Ian", bio: "Some stuff for a bio", email: "ian@email.com", password: "something", password_confirmation: "something" )
 u4 = User.create!(name: "Nina", bio: "Some stuff for a bio", email: "nina@email.com", password: "something", password_confirmation: "something" )

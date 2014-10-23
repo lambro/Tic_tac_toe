@@ -21,12 +21,6 @@
     <%= f.collection_select :player2_id, User.without_user(current_user.id), :id, :name %>
   </div>
 
-<p>Play against the computer?</p>
-  <div class="field">
-    <%= f.label :against_the_computer %><br />
-    <%= f.check_box :draw %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
