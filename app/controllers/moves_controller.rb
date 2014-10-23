@@ -25,7 +25,6 @@ class MovesController < ApplicationController
   # GET /moves/new.json
 
   def new
-
     @game = Game.find params[:game_id]
 
     player_sym = if @game.player1_id == current_user.id
@@ -34,12 +33,19 @@ class MovesController < ApplicationController
       "O"
     end
 
-    @move = Move.create! square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:current_user.id, move: player_sym
+    if params[:computer] == "true"
 
-    respond_to do |format|
-      if @move.save
-        format.html { redirect_to @game, notice: "#{@current_user.name} has moved!" }
-      end
+      @move = Move.create! square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:@game.player2_id, move: "O"
+
+      else
+
+      @move = Move.create! square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:current_user.id, move: player_sym
+    end
+
+      respond_to do |format|
+        if @move.save
+         format.html { redirect_to @game, notice: "#{@current_user.name} has moved!" }
+       end
 
     end
 

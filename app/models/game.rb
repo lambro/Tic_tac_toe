@@ -18,6 +18,18 @@ class Game < ActiveRecord::Base
       board
   end
 
+  #Not really being that random atm!
+  def available_square_id
+    @board = build_board
+    square = @board.sample
+    puts '-' * 90
+    puts square
+    while square != nil
+      square =  @board.sample
+    end
+      computer_square_id = @board.index(square)
+  end
+
   def result
 
     @winning_combo = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]].to_set

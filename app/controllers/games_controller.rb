@@ -19,7 +19,7 @@ class GamesController < ApplicationController
 
     @result = @game.result
     puts "@result is #{@result}"
- 
+
     if @result == 1
       render action: 'result', notice: "Player 1 wins" and return
     elsif @result == 2
@@ -28,9 +28,14 @@ class GamesController < ApplicationController
       render :result,  notice: "It's a draw" and return
     end
 
-  #   if @game.player2_id == 1
+    if @game.player2_id == 1 && @game.moves.present?
+      if @game.moves.last.player_id == @game.player1_id
+        computer_square_id = @game.available_square_id
 
-  #   end
+        redirect_to new_game_move_path(@game, square_id: computer_square_id, computer: true)
+      end
+
+    end
 
   end
 
