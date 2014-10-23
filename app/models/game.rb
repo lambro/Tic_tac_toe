@@ -18,16 +18,8 @@ class Game < ActiveRecord::Base
       board
   end
 
-  def against_the_computer
-
-    self.moves.each do |computer|
-      board[computer.square_id] = computer.move
-    end
-    board
-  end
-
   def result
-    # the set and superset logic should be here
+
     @winning_combo = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]].to_set
 
     @playsx = self.moves.where(move: "X").pluck(:square_id).to_set
@@ -45,7 +37,6 @@ class Game < ActiveRecord::Base
 
     elsif (@playsx.count + @playso.count) >= 9
       @result = 0
-
     else
       self.build_board
     end
