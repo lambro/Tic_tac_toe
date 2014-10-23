@@ -1,4 +1,4 @@
-<h1>Log in</h1>
+<h1>Trill People</h1>
 
 <table>
   <tr>
@@ -6,9 +6,11 @@
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
+  <tr >
+    <td><%= image_tag user.profile_picture_url, class: "mini" %></td>
     <td><%= link_to user.name, user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td>|</td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

@@ -131,6 +131,15 @@ a:hover{
   color:rgba(255, 108, 0, 1.0);
 }
 
+td a{
+  font-size: 1.5em;
+  padding: 2% 10% 2% 5%;
+}
+
+tr th h2{
+  text-align: left
+}
+
 .fa-asterisk{
   color: white;
 }
@@ -159,7 +168,7 @@ padding:5px;
 }
 
 img.mini{
-  width:20%;
+  width:200px;
   border-radius:20px;
 /*  margin:2% 0 2% 0;*/
   border:2px solid rgba(255, 157, 73, 1.0);
