@@ -28,22 +28,28 @@ class MovesController < ApplicationController
 
     @game = Game.find params[:game_id]
 
-    player_sym = if @game.player1_id == current_user.id
-      "X"
-    else
-      "O"
+      player_sym = if @game.player1_id == current_user.id
+        "X"
+      else
+        "O"
     end
 
+    if player2_id != 1
+
     @move = Move.create! square_id:params[:square_id].to_i, game_id:params[:game_id], player_id:current_user.id, move: player_sym
+
+    else
+
+    @move = Move.create! square_id:params[:computer_square_id].to_i, game_id:params[:game_id], player_id: player2_id, move: "O"
+
+    end
 
     respond_to do |format|
       if @move.save
         format.html { redirect_to @game, notice: "#{@current_user.name} has moved!" }
       end
-
     end
-
-    end
+  end
 
 
     # respond_to do |format|

@@ -6,19 +6,23 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato|Warnes|Sacramento|Medula+One' rel='stylesheet' type='text/css'>
 </head>
 
 <header>
-  <nav>
-    <%= link_to 'log me out!', logout_path %>
-    <%= link_to 'Home', root_path %>
-  </nav>
-    <% if current_user %>
-    <p>hello <%= current_user.email %></p>
+  <nav> 
+    <%= link_to 'Home', root_path %> |
+    <% if current_user %><p>You are logged in as <%= current_user.name %></p> | 
+    <%= link_to 'log out!', logout_path %>
     <% end %>
+  </nav>
+    
 
-    <div>
-      <p>Tic Tac Trillll</p>
+    <div class="music"><iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100347401&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><!-- 
+    <iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/173197040&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe> --></div>
+
+    <div class="title">
+      <p class="tic-tac">Tic Tac <span class="trill">Trillll </span> yo!</p>
     </div>
 </header>
 
@@ -35,7 +39,7 @@
 </body>
 
 <footer>
-    <%= link_to("https://gist.github.com/geraudmathe/129faf7e7aa6bfc28425") do %>
+    <%= link_to("https://twitter.com/VoodooLawz") do %>
       <span class="fa-stack fa-1x fa-lg">
        <i class="fa fa-square-o fa-stack-2x"></i>
        <i class="fa fa-twitter fa-stack-1x"></i>
