@@ -20,6 +20,11 @@ header .trill{
   font-family: 'Sacramento', cursive;
   font-size: 4em;
   color:rgba(255, 108, 0, 1.0);
+  -webkit-transition: text-shadow 0.2s linear;
+}
+
+header .trill:hover{
+  text-shadow: 0 0 30px white;
 }
 
 header .title{
@@ -29,6 +34,10 @@ header .title{
   vertical-align: bottom;
   padding-top:105px;
 } 
+
+header a{
+  margin:0 2% 0 2%;
+}
 
 .flash-message{
   color: rgba(255, 108, 0, 1.0);
@@ -68,21 +77,29 @@ h1{
   font-size: 4em;
 }
 
+h2{
+  margin: 5px 0;
+  color:rgba(255, 108, 0, 1.0);
+}
+
 .content{
   width:90%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1%;
+  margin-bottom: 50px;
 }
 
 .game_wrap{
-  width:500px;
+  width:480px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 15%;
   font-size: 2.2rem;
   overflow: hidden;
-  height: 500px;
-  margin-top: -170px;
+  height: 480px;
+  position:absolute;
+  left:35%;
+  top:600px;
 }
 
 .fa{  
@@ -107,6 +124,7 @@ a{
   text-decoration: none;
   color:black;
   font-family: 'Warnes', cursive;
+  display:inline-block;
 }
 
 a:hover{
@@ -116,3 +134,37 @@ a:hover{
 .fa-asterisk{
   color: white;
 }
+
+input{
+  border-radius: 20px;
+  border:1px solid rgba(255, 157, 73, 1.0);
+  padding:5px;
+  background: none;
+}
+
+textarea{
+border-radius: 20px;
+border:1px solid rgba(255, 157, 73, 1.0);
+padding:5px;
+}
+
+#user_profile_picture input{
+  border:1px solid rgba(255, 157, 73, 1.0);
+  background-color:white;
+}
+
+.actions input{
+  color:rgba(255, 108, 0, 1.0);
+  background:rgba(255, 157, 73, 0.5);
+}
+
+img.mini{
+  width:20%;
+  border-radius:20px;
+/*  margin:2% 0 2% 0;*/
+  border:2px solid rgba(255, 157, 73, 1.0);
+}
+
+/*img{
+  width:50%;
+}*/

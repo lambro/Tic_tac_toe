@@ -1,23 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <br><p>
-  <b>Player1:</b>
-  <%= current_user.name %>
+  <h2>Player1:</h2>
+  <h3><%= current_user.name %></h3><br>
+  <%= image_tag current_user.profile_picture_url(:thumb), class: "mini" %>
 </p><br>
 
 <p>
-  <b>Player2:</b>
-  <%= @game.player2.name %>
+  <h2>Player2:</h2>
+  <h3><%= @game.player2.name %></h3><br>
+  <%= image_tag @game.player2.profile_picture_url(:thumb), class: "mini" %>
 </p><br>
 
 <p>
-  <b>Winner:</b>
-  <%= winning_user %>
+  <h2>Winner:</h2>
+  <h3><%= winning_user %></h3>
 </p><br>
 
 <p>
-  <b>Loser:</b>
-  <%= losing_user %>
+  <h2>Loser:</h2>
+  <h3><%= losing_user %></h3>
 </p><br>
 
 <div class="game_wrap" id="game_wrap">
@@ -42,6 +42,7 @@
     <% end %>
   <% end %>
 </div><br>
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
