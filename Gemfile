@@ -7,6 +7,8 @@ gem 'rails', '3.2.19'
 
 gem 'pg'
 gem 'bcrypt-ruby'
+gem 'carrierwave', '0.9.0'
+gem 'rmagick'
 
 group :development, :test do
   gem 'pry-rails'

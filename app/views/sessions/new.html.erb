@@ -12,11 +12,12 @@
       <%= label_tag :password %>
       <%= password_field_tag :password %>
     </div>
-    <div class="actions"><%= submit_tag "Log in" %></div>
+    <div class="actions"><%= submit_tag "Log in" %></div> <br>
+    <%= link_to 'New User', new_user_path %>
     <% end %>
 <% else %>
 
-<%= link_to 'New User', new_user_path %> | 
+
 <%= link_to 'Back', games_path %> | 
 <%= link_to 'New Game', new_game_path %> |
 <%= link_to 'Users', users_path %> | 
