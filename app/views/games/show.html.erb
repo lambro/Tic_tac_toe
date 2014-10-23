@@ -1,55 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<br><p>
   <b>Player1:</b>
   <%= current_user.name %>
-</p>
+</p><br>
 
 <p>
   <b>Player2:</b>
   <%= @game.player2.name %>
-</p>
+</p><br>
 
 <p>
   <b>Winner:</b>
   <%= winning_user %>
-</p>
+</p><br>
 
 <p>
   <b>Loser:</b>
   <%= losing_user %>
-</p>
+</p><br>
 
 <div class="game_wrap" id="game_wrap">
-
-<% @board.each_with_index do |square_id, display| %>
-
-  <%if square_id == "X" %>
-      <span class="fa-stack fa-2x fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-close fa-stack-1x"></i>
-      </span>
-
-  <% elsif square_id == "O" %>
-      <span class="fa-stack fa-2x fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-circle-o fa-stack-1x"></i>
-      </span>
-
-  <% elsif square_id == nil %>
-      <%= link_to(new_game_move_path(@game, square_id: display)) do %>
-      <span class="fa-stack fa-2x fa-lg">
-       <i class="fa fa-square-o fa-stack-2x"></i>
-       <i class="fa fa-asterisk fa-stack-1x"></i>
-      </span>
-    <%end%>
+  <% @board.each_with_index do |square_id, display| %>
+    <%if square_id == "X" %>
+        <span class="fa-stack fa-2x fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-close fa-stack-1x"></i>
+        </span>
+    <% elsif square_id == "O" %>
+        <span class="fa-stack fa-2x fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-circle-o fa-stack-1x"></i>
+        </span>
+    <% elsif square_id == nil %>
+        <%= link_to(new_game_move_path(@game, square_id: display)) do %>
+        <span class="fa-stack fa-2x fa-lg">
+         <i class="fa fa-square-o fa-stack-2x"></i>
+         <i class="fa fa-asterisk fa-stack-1x"></i>
+        </span>
+      <%end%>
+    <% end %>
   <% end %>
-<% end %>
-</div>
-
-<%= @result %>
-
-
+</div><br>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

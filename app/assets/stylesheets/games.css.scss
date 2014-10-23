@@ -7,6 +7,10 @@
   font-family: 'Lato', sans-serif;
 }
 
+body{
+  padding-bottom: 50px;
+}
+
 header .tic-tac{
   font-family: 'Medula One', cursive;
   font-size: 4em;
@@ -15,12 +19,33 @@ header .tic-tac{
 header .trill{
   font-family: 'Sacramento', cursive;
   font-size: 4em;
+  color:rgba(255, 108, 0, 1.0);
 }
 
 header .title{
-  margin-top: 120px;
   text-align: center;
-  background-color: rgba(148, 161, 154, 0.5);
+  background-color: rgba(132, 216, 220, 0.7);
+  height:150px;
+  vertical-align: bottom;
+  padding-top:105px;
+} 
+
+.flash-message{
+  color: rgba(255, 108, 0, 1.0);
+}
+
+footer {
+  position:fixed;
+  bottom:0;
+  background-color: white;
+  border-top: solid 4px rgba(255, 108, 0, 1.0);
+  text-align: center;
+  width: 100%;
+}
+
+footer p{
+  width:100%;
+  margin-left: -20px;
 }
 
 nav p{
@@ -29,9 +54,25 @@ nav p{
   text-align: center;
 }
 
+.content p{
+  display: inline-block;
+  width:25%;
+}
+
+b{ 
+  font-weight: bolder;
+}
+
 h1{
   font-family: 'Medula One', cursive;
   font-size: 4em;
+}
+
+.content{
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1%;
 }
 
 .game_wrap{
@@ -41,6 +82,7 @@ h1{
   font-size: 2.2rem;
   overflow: hidden;
   height: 500px;
+  margin-top: -170px;
 }
 
 .fa{  
@@ -53,7 +95,7 @@ h1{
 }
 
 .fa:hover{
-  color:red;
+  color:rgba(255, 157, 73, 1.0);
   background-color: none;
 }
 
@@ -64,6 +106,11 @@ h1{
 a{
   text-decoration: none;
   color:black;
+  font-family: 'Warnes', cursive;
+}
+
+a:hover{
+  color:rgba(255, 108, 0, 1.0);
 }
 
 .fa-asterisk{

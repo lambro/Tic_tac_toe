@@ -27,6 +27,7 @@
 </header>
 
 <body>
+  <div class="content">
 
   <% flash.each do |name, msg| %>
   <div class="flash-message flash-message-<%= name %>">
@@ -36,6 +37,7 @@
 
   <%= yield %>
 
+  </div>
 </body>
 
 <footer>
