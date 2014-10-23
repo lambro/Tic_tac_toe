@@ -1,23 +1,15 @@
-<h1>Trill People</h1>
+<div class="user_box">
+  <h1>Trill People</h1>
+    <h2>Users online!</h2>
+      <% @users.each do |user| %>
+        <div class="user">
+          <%= image_tag user.profile_picture_url, class: "mini" %><br>
+          <%= link_to user.name, user %><br>
+        </div>
+      <% end %>
+</div>
 
-<table>
-  <tr>
-    <th><h2>Users online!</h2></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr >
-    <td><%= image_tag user.profile_picture_url, class: "mini" %></td>
-    <td><%= link_to user.name, user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td>|</td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'Create a New User', new_user_path %> |
-
-<%= link_to 'Games', games_path %>
+<div class="user_link">
+  <%= link_to 'Create a New User', new_user_path %> |
+  <%= link_to 'Games', games_path %>
+</div>

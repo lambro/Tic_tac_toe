@@ -1,26 +1,17 @@
-<h1>Listing games</h1>
+<h1>Previous Games</h1>
 
 <table>
   <tr>
     <th>Game Number</th>
     <th>Player1</th>
     <th>Player2</th>
-    <th>Winner</th>
-    <th>Loser</th>
-    <th>Draw</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @games.each do |game| %>
   <tr>
     <td><%= game.id %></td>
-    <td><%= game.player1_id %></td>
-    <td><%= game.player2_id %></td>
-    <td><%= game.winner %></td>
-    <td><%= game.loser %></td>
-    <td><%= game.draw %></td>
+    <td><%= game.player1.name %></td>
+    <td><%= game.player2.name %></td>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

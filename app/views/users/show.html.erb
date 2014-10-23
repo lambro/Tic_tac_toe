@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <b>Name:</b>
@@ -11,25 +11,11 @@
 </p>
 
 <p>
-  <b>Wins:</b>
-  <%= @user.wins %><br>
-</p>
-
-<p>
-  <b>Losses:</b>
-  <%= @user.losses %><br>
-</p>
-
-<p>
-  <b>Draws:</b>
-  <%= @user.draws %><br>
-</p>
-
-<p>
   <b>Profile picture:</b>
   <%= image_tag @user.profile_picture_url %>
 </p>
 
+<p id="notice"><%= notice %></p>
 <% if current_user %>
 <% if current_user.id == @user.id %>
 <%= link_to 'Edit', edit_user_path(@user) %>|

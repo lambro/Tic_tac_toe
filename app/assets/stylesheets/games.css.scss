@@ -49,7 +49,9 @@ footer {
   background-color: white;
   border-top: solid 4px rgba(255, 108, 0, 1.0);
   text-align: center;
+  height: 45px;
   width: 100%;
+  line-height: 45px;
 }
 
 footer p{
@@ -107,7 +109,6 @@ h2{
   padding:  2px;
   display: inline-block;
   padding-right: 10px;
-  padding-left: 10px;
   color:black;
 }
 
@@ -172,6 +173,26 @@ img.mini{
   border-radius:20px;
 /*  margin:2% 0 2% 0;*/
   border:2px solid rgba(255, 157, 73, 1.0);
+}
+
+.user_box{
+  width:80%;
+  margin-right: auto;
+  margin-left:auto;
+  text-align: center;
+} 
+
+.user_link{
+  width:100%;
+  margin-right: auto;
+  margin-left:auto;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+.user{
+  display:inline-block;
+  margin:2%;
 }
 
 /*img{

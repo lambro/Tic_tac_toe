@@ -1,23 +1,19 @@
 
-<h1>Something</h1>
+<h1>And the result is...</h1>
 
 <% if @game.result == 1 %>
+  <h2><%= @game.player1.name%> wins this game!</h2><br>
+  <h2><%= @game.player2.name%>, you need to work on your game.</h2><br>
+  <h2>Stay trill.</h2>
 
-<h2><%= @game.player1.name%> wins this game!</h2><br>
-<h2><%= @game.player2.name%>, you need to work on your game.</h2><br>
-<h2>Stay trill.</h2>
+<% elsif x.result == 2 %>
+  <h2><%= @game.player2.name%> wins this game!</h2><br>
+  <h2><%= @game.player1.name%>, you need to work on your game.</h2><br>
+  <h2>Stay trill.</h2>
 
-<% elsif x.result == "2" %>
+<% else x.result == 0 %>
+  <h2><%= @game.player2.name%>, <%= @game.player1.name%>, thats a DRAW.</h2><br>
+  <h2>Stay trill.</h2>
+<% end %><br>
 
-<h2><%= @game.player2.name%> wins this game!</h2><br>
-<h2><%= @game.player1.name%>, you need to work on your game.</h2><br>
-<h2>Stay trill.</h2>
-
-<% else x.result == "0" %>
-
-<h2><%= @game.player2.name%>, <%= @game.player1.name%>, thats a DRAW.</h2><br>
-<h2>Stay trill.</h2>
-
-<% end %>
-
-<br><%= link_to 'Games', games_path %>
+<%= link_to 'Games', games_path %>
