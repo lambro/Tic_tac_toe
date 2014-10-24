@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th>Game Number</th>
-    <th>Player1</th>
-    <th>Player2</th>
+    <th><h2>Game Number</h2></th>
+    <th><h2>Player1</h2></th>
+    <th><h2>Player2</h2></th>
   </tr>
 
 <% @games.each do |game| %>
@@ -12,9 +12,11 @@
     <td><%= game.id %></td>
     <td><%= game.player1.name %></td>
     <td><%= game.player2.name %></td>
-    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Show', game %></td> 
+    <td>|</td> 
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>|</td>
+    <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
