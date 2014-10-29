@@ -7,6 +7,22 @@
   font-family: 'Lato', sans-serif;
 }
 
+canvas{
+  background: url("space_bg.gif"); 
+  background-position: center; 
+  width: 720px; 
+  margin-left: 20%; 
+  margin-right: 20%; 
+  margin-top:5%; 
+  border: solid 5px rgba(51, 232, 237, 1.0);
+  }
+
+#canvas_h1{
+  width:100%; 
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
 body{
   padding-bottom: 50px;
 }
