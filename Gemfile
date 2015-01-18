@@ -9,6 +9,7 @@ gem 'pg'
 gem 'bcrypt-ruby'
 gem 'carrierwave', '0.9.0'
 gem 'rmagick'
+gem "fog", "~> 1.3.1"
 
 group :development, :test do
   gem 'pry-rails'
